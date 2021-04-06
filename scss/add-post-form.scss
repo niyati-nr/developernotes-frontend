@@ -1,0 +1,26 @@
+label {
+  color: white;
+  font-size: 15pt;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+.new-post-form-section {
+  padding: 20px;
+  margin: 30px;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+#postBlogBtn {
+  background-color: rgb(81, 154, 167);
+  color: white;
+  font-weight: bolder;
+  transition: 0.2s ease;
+}
+#postBlogBtn:hover {
+  background-color: white;
+  color: rgb(81, 154, 167);
+}
+.validation-message {
+  font-weight: bolder;
+  color: yellow;
+  font-style: italic;
+}
