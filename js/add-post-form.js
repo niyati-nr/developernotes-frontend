@@ -1,21 +1,25 @@
-(function() {
-    'use strict';
-    window.addEventListener('load', function() {
-        // Fetch all the forms we want to apply custom Bootstrap validation styles to
-        var forms = document.getElementsByClassName('needs-validation');
-        // Loop over them and prevent submission
-        var validation = Array.prototype.filter.call(forms, function(form) {
-            form.addEventListener('submit', function(event) {
-                if (form.checkValidity() === false) {
-                    event.preventDefault();
-                    event.stopPropagation();
-                    form.classList.add('has-error');
-                }
-                form.classList.add('was-validated');
-            }, false);
-        });
-    }, false);
-})();
+$(function(){
+    var sessionStore = window.sessionStorage;
+    if(sessionStore.getItem('usertoken')!==null&&sessionStore.getItem('usertoken')!==undefined){
+        $('#blog-author').attr("value",sessionStore.getItem("username"));
+    }
+    else{
+        $('#blog-author').attr("value","Anonymous");
+        $('#anonymous-author').prop('checked',true);
+        $('#anonymous-author').prop('disabled',true);
+    }
+    $("#blog-author").prop('disabled', true);
+    $("#blog-author").css({'background-color':'#989898',"font-weight":"bolder"});
+});
+$(document).on('change','#anonymous-author',function(){
+    if($(this).is(":checked")){
+        // alert('You will not be able to edit/delete a post that has been posted as anonymous.');
+        $('#blog-author').attr("value","Anonymous");
+    }
+    else{
+        $('#blog-author').attr("value",window.sessionStorage.getItem("username"));
+    }
+});
 $('#add-post-form-elem').submit(async function(event){
     event.preventDefault();
     var jsonObject = getFormDataJson();
@@ -37,23 +41,15 @@ function getFormDataJson(){
     var categories = $('#blog-categories').val().split(",");
     var content = $("#blog-content").val();
     jsonObject["title"] = title;
-    jsonObject["author"] = author;
+    jsonObject["author"] = author
     jsonObject["categories"] = categories;
     jsonObject["content"] = content;
+    jsonObject["bloguserid"] = window.sessionStorage.getItem('usertoken')
+    if(author.toUpperCase()==='ANONYMOUS'){
+        jsonObject["authorid"] = 'anonymous';
+    }
+    else{
+        jsonObject["authorid"] = window.sessionStorage.getItem('usertoken');
+    }
     return jsonObject;
 }
-async function postData(url = '', data = {}) {
-    const response = await fetch(url, {
-      method: 'POST',
-      mode: 'cors',
-      cache: 'no-cache',
-      credentials: 'same-origin',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      redirect: 'follow',
-      referrerPolicy: 'no-referrer',
-      body: JSON.stringify(data)
-    });
-    return response.json();
-  }

@@ -22,28 +22,18 @@ function renderPost(blogPost){
         });
         var content = blogPost.content.replace(/\n/g, "<br />");
         let html = `
-        <div class="row mb-3" style="border-bottom:2px solid black;">
+        <div class="row mb-3" style="border-bottom:2px solid white;">
             <h1 class="display-4" style="text-transform:uppercase;">${blogPost.title}</h1>
         </div>
-        <div class="row mb-5">
+        <div class="row">
             <p><small>Posted by <em>${blogPost.author}</em> on ${date}</small></p>
         </div>
-        <div class="row">
+        <div class="row mb-3">
+            <p><small>Categories: <em>${blogPost.categories}</em></small></p>
+        </div>
+        <div class="row" style="padding:10px;background-color:rgba(255,255,255,0.10);">
             ${content}
         </div>
         `
         $('#read-post-section').prepend(html);
-}
-function GetURLParameter(sParam)
-{
-    var sPageURL = window.location.search.substring(1);
-    var sURLVariables = sPageURL.split('&');
-    for (var i = 0; i < sURLVariables.length; i++) 
-    {
-        var sParameterName = sURLVariables[i].split('=');
-        if (sParameterName[0] == sParam) 
-        {
-            return sParameterName[1];
-        }
-    }
 }

@@ -1,22 +1,23 @@
 body {
   background-color: #020025;
 }
+
 #cover-image {
   width: 100%;
   height: 30em;
   object-fit: cover;
 }
-#newPostBtn {
-  outline: none;
-}
+
 .dev-text {
   font-family: "Share Tech Mono", monospace;
 }
+
 .main-display {
   background-image: url(../resources/images/cover2.jpg);
   background-size: cover;
   background-position: 0px -190px;
 }
+
 .main-display-text {
   width: 60%;
   background: rgba(12, 17, 83, 0.5);
@@ -24,13 +25,31 @@ body {
   color: white;
   margin: 250px 0px 50px 0px;
 }
+
 .main-display-section-text {
   font-size: 2.5vw;
 }
+
 .main-display-coloredtext {
   color: #00ff00;
   font-weight: bolder;
 }
+
 .main-display-subtext {
   font-weight: lighter;
+}
+
+.nav-btn-right {
+  text-decoration: none;
+  color: white;
+}
+.nav-btn-right:hover {
+  color: greenyellow;
+}
+.anchor-link {
+  text-decoration: none;
+  color: white;
+}
+.anchor-link:hover {
+  color: greenyellow;
 }

@@ -21,19 +21,6 @@ function renderPosts(blogPosts){
             second: 'numeric',
             hour12: true 
         });
-        /*let html = `
-        <div class="col-sm-6">
-            <div class="card border-light bg-light mb-3 text-center" style="width: 80%; margin:40px;">
-                <div class="card-header">
-                    ${blogPost.title}
-                </div>
-                <div class="card-body">
-                    <h6 class="card-subtitle mb-3 text-muted">${date}</h6>
-                    <p class="card-text blog-card-text  text-truncate text-nowrap">${blogPost.content}</p>
-                    <a href="#" class="btn btn-primary">Read More</a>
-                </div>
-            </div>
-        </div>`;*/
         let html = `
         <div class="col-sm-6">
             <div class="card text-white bg-dark mb-3 text-center" style="width: 80%; margin:40px;">

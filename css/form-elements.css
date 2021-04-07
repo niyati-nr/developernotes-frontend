@@ -4,21 +4,25 @@ label {
   margin-bottom: 10px;
   font-style: italic;
 }
-.new-post-form-section {
+
+.form-section {
   padding: 20px;
   margin: 30px;
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(12, 17, 83, 0.5);
 }
-#postBlogBtn {
-  background-color: rgb(81, 154, 167);
+
+.form-submit-btn {
+  background-color: #519aa7;
   color: white;
   font-weight: bolder;
   transition: 0.2s ease;
 }
-#postBlogBtn:hover {
+
+.form-submit-btn:hover {
   background-color: white;
-  color: rgb(81, 154, 167);
+  color: #519aa7;
 }
+
 .validation-message {
   font-weight: bolder;
   color: yellow;

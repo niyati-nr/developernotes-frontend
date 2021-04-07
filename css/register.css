@@ -5,20 +5,20 @@ label {
   font-style: italic;
 }
 
-.new-post-form-section {
+.register-form-section {
   padding: 20px;
   margin: 30px;
   background-color: rgba(255, 255, 255, 0.4);
 }
 
-#postBlogBtn {
+#registerBtn {
   background-color: #519aa7;
   color: white;
   font-weight: bolder;
   transition: 0.2s ease;
 }
 
-#postBlogBtn:hover {
+#registerBtn:hover {
   background-color: white;
   color: #519aa7;
 }
